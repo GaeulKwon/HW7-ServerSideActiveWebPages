@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div class="text-secondary">
+  <div class="jumbotron">
+      <h2>Here are your list of things to do</h2>
+
+      <%if (dataArray != null) { %>
+       
+        <ul class="list-group">
+            <% for(var i=0; i<dataArray.length; i++) {%>
+              <li class="list-group-item"><%= "Things to do:  " + dataArray[i].toDo + " &nbsp;&nbsp; Due By: " + dataArray[i].date %></li>
+            <% } %>
+          </ul>
+    
+    
+        <% } %>
+       
+      </br>
+      
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+
+</body>
+</html>

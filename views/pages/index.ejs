@@ -1,0 +1,35 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    <!-- CSS should be in a file -->
+    <style>
+    .jumbotron
+    {
+      background-color: #ffb6c1;
+    }
+    </style>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+ 
+  <div class="jumbotron">
+      <div class="p-3 mb-2 bg-danger text-white">
+      <h1>Hi there stranger!</h1>
+      <p>Welcome to May's mini page</p>
+  </div>
+</div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

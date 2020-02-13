@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+    
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div class="text-secondary">
+  <div class="jumbotron">      
+      <h2>Make a list of things to do!</h2>
+
+      <label for="toDo">What do you need to do?</label>
+      <input class="form-control" type="text" id="toDo" name="toDo"><br>
+      <label for="date">When is it due? (mm/dd/yyyy)></label>
+      <input class="form-control" type="text" id="date" name="date"><br>
+      <button class="btn btn-primary  " onclick="updateURL();">Add to list </button>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+<script type="text/javascript">
+// our menu calls this page URL with no ?id= value,
+// so code needs to check for that
+// when user enters data, I append the data using the required ?id=
+
+  function updateURL() {
+    // http://localhost:3000/uploadData?id=Terminator&date=1946
+    var myURL = (document.location).toString();
+    var n = myURL.indexOf("?");
+    myURL = myURL.substr(0, n); 
+    document.location = myURL + "?toDo=" + document.getElementById("toDo").value + 
+    "&date=" +  document.getElementById("date").value;
+
+  }
+</script>
+
+</body>
+</html>
